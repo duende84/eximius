@@ -1,0 +1,36 @@
+@media screen {
+  h1{
+  	font-size: 30px;
+  	text-align:center;
+  }
+
+  label{
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 1000px){
+  h1{
+  	font-size: 25px;
+  }
+
+  label{
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 800px){
+ h1{
+  	font-size: 20px;
+  }
+
+  label{
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 500px){
+  h1{
+  	font-size: 15px;
+  }
+}
