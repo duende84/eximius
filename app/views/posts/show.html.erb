@@ -6,6 +6,10 @@
 	  <%= @post.date %>
 	</p>
 
+	<% if !@post.image_url(:show).to_s.blank? %>
+		<p><%= image_tag @post.image_url(:show).to_s %></p>
+	<% end %>
+
 	<p>
 	  <%= @post.content %>
 	</p>

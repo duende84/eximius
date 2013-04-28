@@ -11,6 +11,10 @@ gem 'pg', '~> 0.14.1'
 gem "omniauth", "~> 1.1.3"
 gem "omniauth-facebook", "~> 1.4.1"
 
+# Upload Image
+gem "rmagick", "~> 2.13.2"
+gem "carrierwave", "~> 0.8.0"
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
