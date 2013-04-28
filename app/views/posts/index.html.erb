@@ -1,0 +1,16 @@
+<div id="reg_form" class="bg_form">
+  <h1>Blog Eximius</h1>
+
+  <% @posts.each do |post| %>
+    <hr>
+    <div>
+      <h3><%= post.title %></h3>
+      <p><%= post.date %></p>
+      <p><%= post.content %></p>
+      <p><%= link_to 'Mostrar', post %> - <%= link_to 'Editar', edit_post_path(post) %> - <%= link_to 'Eliminar', post, method: :delete, data: { confirm: '¿Estas seguro?' } %></p>
+    </div>
+  <% end %>
+
+  <hr>
+  <%= link_to 'Nuevo Post', new_post_path %>
+</div>
