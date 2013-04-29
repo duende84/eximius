@@ -1,2 +1,20 @@
 @import "bootstrap";
 @import "bootstrap-responsive";
+
+.navbar-inner{
+  background-image: url('bg_menu.png') !important;
+  background-repeat:repeat-x;
+  height: 140px;
+  border: none;
+  border-color: white !important;
+  background-color: white !important;
+  box-shadow: none !important;
+}
+
+.nav li>a {
+  font-size: 20px;
+}
+
+.navbar .nav.pull-right {
+	margin-top: 3%;
+}
