@@ -1,0 +1,31 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+  <div id="reg_form" class="bg_form">
+    <p>
+      <b>Nombre:</b>
+      <%= @user.name %>
+    </p>
+
+    <p>
+      <b>Usuario:</b>
+      <%= @user.nickname %>
+    </p>
+
+    <p>
+      <b>Email:</b>
+      <%= @user.email %>
+    </p>
+
+    <p>
+      <b>Rol:</b>
+      <%= @user.rol %>
+    </p>
+
+    <p>
+      <b>Descripcion:</b>
+      <%= @user.description %>
+    </p>
+
+    <%= link_to 'Editar Perfil', edit_user_path(@user) %>
+  </div>
+</div>

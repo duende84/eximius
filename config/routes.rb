@@ -1,7 +1,13 @@
 Eximius::Application.routes.draw do
 
-  resources :posts
+  resources :users do
+    member do
+      get 'password'
+      put 'update_password'
+    end
+  end
 
+  resources :posts
 
   match 'contact' => 'contact#new', :as => 'contact', :via => :get
   match 'contact' => 'contact#create', :as => 'contact', :via => :post
