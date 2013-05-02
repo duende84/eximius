@@ -19,7 +19,13 @@ root_path, :class => 'brand img_brand' %>
         <%= image_tag("user.png", :alt => "Usuarios") %>
       </a>
       <ul class="dropdown-menu">
-        <li><%= link_to "Iniciar sesion", root_path %></li>
+        <% if signed_in? %>
+            <li><%= link_to "Mi perfil: "+current_user.name, current_user %></li>
+            <li class="divider"></li>
+            <li><%= link_to "Salir", signout_path, method: "delete" %></li>
+          <% else %>
+            <li><%= link_to "Iniciar sesion", signin_path %></li>
+          <% end %>
       </ul>
     </li>
   </ul>
