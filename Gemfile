@@ -5,7 +5,7 @@ gem 'rails', '3.2.13'
 gem 'json', '~>1.7.7'
 
 # Postgresql
-gem 'pg', '~> 0.14.1'
+gem "pg", "~> 0.15.1"
 
 # omniauth
 gem "omniauth", "~> 1.1.3"
