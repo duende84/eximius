@@ -22,5 +22,7 @@
   <% end %>
 
   <hr>
-  <%= link_to 'Nuevo Post', new_post_path %>
+  <% if can? :create, @post %>
+    <%= link_to 'Nuevo Post', new_post_path %>
+  <% end %>
 </div>
