@@ -1,8 +1,10 @@
 class User < ActiveRecord::Base
   attr_accessible :description, :email, :name, :nickname, :password,
-  :password_digest, :remember_token, :rol, :user_type_id, :password_confirmation
+  :password_digest, :remember_token, :rol, :user_type_id, :password_confirmation, :user_type, :admin
 
   attr_accessor :skip_password_validation
+
+  belongs_to :user_type
 
   has_secure_password
 
@@ -23,6 +25,14 @@ class User < ActiveRecord::Base
       params.delete :password
       params.delete :password_confirmation
       update_attributes params
+    end
+  end
+
+  def admin?
+    if self.user_type == UserType.find_by_name('Admin')
+      return true
+    else
+      return false
     end
   end
 

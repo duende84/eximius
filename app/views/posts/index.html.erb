@@ -10,7 +10,14 @@
         <p><%= image_tag post.image_url(:thumb).to_s %></p>
       <% end %>
       <p><%= post.content %></p>
-      <p><%= link_to 'Mostrar', post %> - <%= link_to 'Editar', edit_post_path(post) %> - <%= link_to 'Eliminar', post, method: :delete, data: { confirm: '¿Estas seguro?' } %></p>
+      <p><%= link_to 'Mostrar', post %>
+        <% if can? :update, @post %>
+        - <%= link_to 'Editar', edit_post_path(post) %>
+        <% end %>
+        <% if can? :destroy, @post %>
+        - <%= link_to 'Eliminar', post, method: :delete, data: { confirm: '¿Estas seguro?' } %>
+        <% end %>
+      </p>
     </div>
   <% end %>
 
