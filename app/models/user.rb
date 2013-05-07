@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
   end
 
   def admin?
-    if self.user_type == UserType.find_by_name('Admin')
+    if (self.user_type == UserType.find_by_name('Admin')) && (self.user_type!= nil)
       return true
     else
       return false
