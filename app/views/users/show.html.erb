@@ -25,7 +25,10 @@
       <b>Descripcion:</b>
       <%= @user.description %>
     </p>
+    <% if can? :update, @user %>
+      <%= link_to 'Editar Perfil', edit_user_path(@user) %> |
+    <% end %>
+    <%= link_to 'Regresar', users_path %>
 
-    <%= link_to 'Editar Perfil', edit_user_path(@user) %>
   </div>
 </div>

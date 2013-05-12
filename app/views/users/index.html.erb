@@ -4,15 +4,23 @@
   <% @users.each do |user| %>
     <hr>
     <div class="user">
-        <p><%= user.name %></p>
-        <p><%= user.nickname %></p>
-        <p><%= user.email %></p>
-        <p><%= user.rol %></p>
-        <p><%= user.description %></p>
-        <p><%= link_to 'Mostrar', user %> - <%= link_to 'Editar', edit_user_path(user) %> - <%= link_to 'Eliminar', user, method: :delete, data: { confirm: '¿Estas seguro?' } %></p>
+      <p><%= user.name %></p>
+      <p><%= user.nickname %></p>
+      <p><%= user.email %></p>
+      <p><%= user.rol %></p>
+      <p><%= user.description %></p>
+      <p><%= link_to 'Mostrar', user %>
+        <% if can? :update, @user %>
+        - <%= link_to 'Editar', edit_user_path(user) %>
+        <% end %>
+        <% if can? :destroy, @user %>
+        - <%= link_to 'Eliminar', user, method: :delete, data: { confirm: '¿Estas seguro?' } %>
+        <% end %>
+      </p>
     </div>
   <% end %>
-
   <hr>
-  <%= link_to 'Nuevo usuario', new_user_path %>
+  <% if can? :create, User %>
+    <%= link_to 'Nuevo usuario', new_user_path %>
+  <% end %>
 </div>
