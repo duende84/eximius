@@ -15,7 +15,7 @@
       <% if !post.image_url(:thumb).to_s.blank? %>
         <p><%= image_tag post.image_url(:thumb).to_s %></p>
       <% end %>
-      <p><%= post.content %></p>
+      <p><%= post.content.html_safe %></p>
       <p><%= link_to 'Mostrar', post %>
         <% if can? :update, post %>
         - <%= link_to 'Editar', edit_post_path(post) %>

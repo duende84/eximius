@@ -18,6 +18,9 @@ gem "carrierwave", "~> 0.8.0"
 # Simple authorization for users roles
 gem "cancan", "~> 1.6.9"
 
+# Rich text editor for Twitter Bootstrap
+gem "bootstrap-wysihtml5-rails", "~> 0.3.1.20"
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
