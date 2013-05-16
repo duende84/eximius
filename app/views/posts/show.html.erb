@@ -4,6 +4,9 @@
   <p>
 	  <b>Fecha:</b>
 	  <%= @post.date %>
+	  <br>
+	  <b>Autor:</b>
+	  <%= "#{@post.author.name} #{@post.author.email}" %>
 	</p>
 
 	<% if !@post.image_url(:show).to_s.blank? %>

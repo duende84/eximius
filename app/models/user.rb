@@ -1,3 +1,21 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  name            :string(255)
+#  password        :string(255)
+#  email           :string(255)
+#  nickname        :string(255)
+#  rol             :string(255)
+#  description     :text
+#  password_digest :string(255)
+#  remember_token  :string(255)
+#  user_type_id    :integer
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
 class User < ActiveRecord::Base
   attr_accessible :description, :email, :name, :nickname, :password,
   :password_digest, :remember_token, :rol, :user_type_id, :password_confirmation, :user_type, :admin
@@ -5,6 +23,7 @@ class User < ActiveRecord::Base
   attr_accessor :skip_password_validation
 
   belongs_to :user_type
+  has_many :posts
 
   has_secure_password
 
@@ -30,6 +49,14 @@ class User < ActiveRecord::Base
 
   def admin?
     if (self.user_type == UserType.find_by_name('Admin')) && (self.user_type!= nil)
+      return true
+    else
+      return false
+    end
+  end
+
+  def register?
+    if (self.user_type == UserType.find_by_name('Registrado')) && (self.user_type!= nil)
       return true
     else
       return false

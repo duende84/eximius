@@ -10,10 +10,10 @@
       <p><%= user.rol %></p>
       <p><%= user.description %></p>
       <p><%= link_to 'Mostrar', user %>
-        <% if can? :update, @user %>
+        <% if can? :update, user %>
         - <%= link_to 'Editar', edit_user_path(user) %>
         <% end %>
-        <% if can? :destroy, @user %>
+        <% if can? :destroy, user %>
         - <%= link_to 'Eliminar', user, method: :delete, data: { confirm: '¿Estas seguro?' } %>
         <% end %>
       </p>

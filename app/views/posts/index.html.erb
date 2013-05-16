@@ -5,16 +5,22 @@
     <hr>
     <div>
       <h3><%= post.title %></h3>
-      <p><%= post.date %></p>
+      <p>
+        <b>Fecha:</b>
+        <%= post.date %>
+        <br>
+        <b>Autor:</b>
+        <%= "#{post.author.name} #{post.author.email}" %>
+      </p>
       <% if !post.image_url(:thumb).to_s.blank? %>
         <p><%= image_tag post.image_url(:thumb).to_s %></p>
       <% end %>
       <p><%= post.content %></p>
       <p><%= link_to 'Mostrar', post %>
-        <% if can? :update, @post %>
+        <% if can? :update, post %>
         - <%= link_to 'Editar', edit_post_path(post) %>
         <% end %>
-        <% if can? :destroy, @post %>
+        <% if can? :destroy, post %>
         - <%= link_to 'Eliminar', post, method: :delete, data: { confirm: '¿Estas seguro?' } %>
         <% end %>
       </p>
@@ -22,7 +28,7 @@
   <% end %>
 
   <hr>
-  <% if can? :create, @post %>
+  <% if can? :create, Post %>
     <%= link_to 'Nuevo Post', new_post_path %>
   <% end %>
 </div>
