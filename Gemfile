@@ -15,6 +15,9 @@ gem "omniauth-facebook", "~> 1.4.1"
 gem "rmagick", "~> 2.13.2"
 gem "carrierwave", "~> 0.8.0"
 
+# rackspace storage
+gem "fog", "~> 1.11.1"
+
 # Simple authorization for users roles
 gem "cancan", "~> 1.6.9"
 
