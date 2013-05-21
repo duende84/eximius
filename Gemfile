@@ -24,6 +24,9 @@ gem "cancan", "~> 1.6.9"
 # Rich text editor for Twitter Bootstrap
 gem "bootstrap-wysihtml5-rails", "~> 0.3.1.20"
 
+# NewRelic system monitor
+gem 'newrelic_rpm'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
