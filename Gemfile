@@ -27,6 +27,8 @@ gem "bootstrap-wysihtml5-rails", "~> 0.3.1.20"
 # NewRelic system monitor
 gem 'newrelic_rpm'
 
+gem "social-buttons", "~> 0.3.7"
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
