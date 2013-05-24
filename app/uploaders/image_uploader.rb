@@ -14,13 +14,21 @@ class ImageUploader < CarrierWave::Uploader::Base
   # storage :file
   storage :fog
 
-  CarrierWave.configure do |config|
+  # Configure uploads to be stored in a public Cloud Files container
+  def fog_directory
     if Rails.env.production?
-      config.fog_directory = 'eximius_blog'
-      config.asset_host = "https://ac7b8bb4ee47c099fe5f-0bab9a7e141841369cb9110dbe691c6b.ssl.cf1.rackcdn.com"
+      'eximius_blog'
     else
-      config.fog_directory = 'eximius_blog_dev'
-      config.asset_host = "https://a9d082dc8efa7f56f797-a043614c2f2f1362d259a3a942a45a67.ssl.cf1.rackcdn.com"
+      'eximius_blog_dev'
+    end
+  end
+
+  # Configure uploads to be delivered over Rackspace CDN
+  def assets_host
+    if Rails.env.production?
+      "https://ac7b8bb4ee47c099fe5f-0bab9a7e141841369cb9110dbe691c6b.ssl.cf1.rackcdn.com"
+    else
+      "https://a9d082dc8efa7f56f797-a043614c2f2f1362d259a3a942a45a67.ssl.cf1.rackcdn.com"
     end
   end
 
