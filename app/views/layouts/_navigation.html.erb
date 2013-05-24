@@ -11,12 +11,12 @@ root_path, :class => 'brand img_brand' %>
   <ul class="nav pull-right">
     <li><%= link_to "Inicio", root_path, :class => 'home_link' %></li>
     <li><%= link_to "Servicios", root_path, :class => 'home_link' %></li>
-    <li><%= link_to "Conocenos", root_path, :class => 'home_link' %></li>
+    <li><%= link_to "Conocenos", users_path, :class => 'home_link' %></li>
     <li><%= link_to "Contacto", contact_path, :class => 'home_link' %></li>
     <li><%= link_to "Blog", posts_path, :class => 'home_link' %></li>
     <li class="dropdown" id="accountmenu">
       <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-        <%= image_tag("user.png", :alt => "Usuarios") %>
+        <%= image_tag("user2.png", :alt => "Usuarios") %>
       </a>
       <ul class="dropdown-menu">
         <% if signed_in? %>

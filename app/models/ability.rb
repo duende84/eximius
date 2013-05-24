@@ -12,7 +12,7 @@ class Ability
       can [:update, :destroy], Post, :author_id => user.id
       can :create, Post
     else
-      can :read, Post
+      can :read, [Post, User]
       can :create, User
     end
     #
