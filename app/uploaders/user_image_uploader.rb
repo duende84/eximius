@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class ImageUploader < CarrierWave::Uploader::Base
+class UserImageUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   include CarrierWave::RMagick
@@ -16,11 +16,11 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   CarrierWave.configure do |config|
     if Rails.env.production?
-      config.fog_directory = 'eximius_blog'
-      config.asset_host = "https://ac7b8bb4ee47c099fe5f-0bab9a7e141841369cb9110dbe691c6b.ssl.cf1.rackcdn.com"
+      config.fog_directory = 'users'
+      config.asset_host = "https://b6334d9f00b5041474ea-150a266ef7708624478605c1d471a1ec.ssl.cf1.rackcdn.com"
     else
-      config.fog_directory = 'eximius_blog_dev'
-      config.asset_host = "https://a9d082dc8efa7f56f797-a043614c2f2f1362d259a3a942a45a67.ssl.cf1.rackcdn.com"
+      config.fog_directory = 'users_dev'
+      config.asset_host = "https://18b8f6824db9fe364f8f-8514b92c5252643bd5f9adfc9b8b03c4.ssl.cf1.rackcdn.com"
     end
   end
 
@@ -47,11 +47,11 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :thumb do
-    process :resize_to_limit => [200, 200]
+    process :resize_to_limit => [100, 100]
   end
 
-  version :show do
-    process :resize_to_limit => [600, 600]
+  version :mini do
+    process :resize_to_limit => [50, 50]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

@@ -14,11 +14,13 @@
 #  user_type_id    :integer
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  image           :string(255)
 #
 
 class User < ActiveRecord::Base
   attr_accessible :description, :email, :name, :nickname, :password,
-  :password_digest, :remember_token, :rol, :user_type_id, :password_confirmation, :user_type, :admin
+  :password_digest, :remember_token, :rol, :user_type_id, :password_confirmation, :user_type, :admin,
+  :image, :remote_image_url
 
   attr_accessor :skip_password_validation
 
@@ -38,6 +40,8 @@ class User < ActiveRecord::Base
   validates :nickname, uniqueness: { case_sensitive: false }, :on => :update
   validates :password, :presence => true, length: { minimum: 6 }, :unless => :skip_password_validation
   validates :password_confirmation, presence: true, :unless => :skip_password_validation
+
+  mount_uploader :image, UserImageUploader
 
   def custom_update_attributes(params)
     if params[:password].blank?

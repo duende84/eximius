@@ -1,6 +1,9 @@
 <% provide(:title, @user.name) %>
 <div class="row">
   <div id="reg_form" class="bg_form">
+    <% if !@user.image_url(:thumb).to_s.blank? %>
+      <p><%= image_tag @user.image_url(:thumb).to_s %></p>
+    <% end %>
     <p>
       <b>Nombre:</b>
       <%= @user.name %>

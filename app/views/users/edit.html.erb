@@ -22,6 +22,12 @@
 		    <%= f.label :description, 'Descripcion', :class => "label_form"  %>
         <%= f.text_area :description, :class => "text_field_form", :size => "50x10"  %>
 
+        <%= f.label :image, 'Imagen', :class => "label_form" %>
+        <%= f.file_field :image, :class => "text_field_form" %>
+
+        <%= f.label :remote_image_url, "o URL de imagen", :class => "label_form" %>
+        <%= f.text_field :remote_image_url, :class => "text_field_form" %>
+
 		    <%= f.submit "Guardar", class: "btn btn-primary btn_form"%>
 		  <% end %>
 		  <hr>
