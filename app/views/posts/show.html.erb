@@ -1,22 +1,24 @@
 <% provide(:title, 'Blog') %>
-<div id="reg_form" class="bg_form">
-  <h3><%= @post.title %></h3>
+<div id="reg_form" class="bg_form blog_content">
+	<div class="justify_text post_content">
+	  <h3><%= @post.title %></h3>
 
-  <p>
-	  <b>Fecha:</b>
-	  <%= @post.date %>
-	  <br>
-	  <b>Autor:</b>
-	  <%= "#{@post.author.name} #{@post.author.email}" %>
-	</p>
+	  <p>
+		  <b>Fecha:</b>
+		  <%= @post.date %>
+		  <br>
+		  <b>Autor:</b>
+		  <%= "#{@post.author.name} #{@post.author.email}" %>
+		</p>
 
-	<% if !@post.image_url(:show).to_s.blank? %>
-		<p><%= image_tag @post.image_url(:show).to_s %></p>
-	<% end %>
+		<% if !@post.image_url(:show).to_s.blank? %>
+			<p><%= image_tag @post.image_url(:show).to_s %></p>
+		<% end %>
 
-	<p>
-	  <%= @post.content.html_safe %>
-	</p>
+		<p>
+		  <%= @post.content.html_safe %>
+		</p>
+	</div>
 
 	<hr>
 	<% if can? :update, @post %>

@@ -1,10 +1,10 @@
 <% provide(:title, 'Blog') %>
-<div id="reg_form" class="bg_form">
+<div id="reg_form" class="bg_form blog_content">
   <h1>Blog Eximius</h1>
 
   <% @posts.each do |post| %>
     <hr>
-    <div>
+    <div class="justify_text post_content">
       <h3><%= post.title %></h3>
       <p>
         <b>Fecha:</b>
