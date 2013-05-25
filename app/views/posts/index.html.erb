@@ -27,7 +27,10 @@
       </p>
     </div>
   <% end %>
-
+  <hr>
+  <div class="center_pagination">
+    <%= paginate @posts, :theme => 'twitter-bootstrap', :pagination_class => "pagination_centered" %>
+  </div>
   <hr>
   <% if can? :create, Post %>
     <%= link_to 'Nuevo Post', new_post_path %>

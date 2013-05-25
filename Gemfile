@@ -29,6 +29,10 @@ gem 'newrelic_rpm'
 
 gem "social-buttons", "~> 0.3.7"
 
+# Pagination
+gem "kaminari", "~> 0.14.1"
+gem "bootstrap-kaminari-views", "~> 0.0.2"
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

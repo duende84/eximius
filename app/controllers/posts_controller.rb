@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.find(:all, :order => 'date DESC')
+    @posts = Post.order("date DESC").page(params[:page]).per(2)
 
     respond_to do |format|
       format.html # index.html.erb
