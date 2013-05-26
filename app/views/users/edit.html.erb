@@ -34,6 +34,9 @@
 			<p>
 				<%= link_to 'Regresar', @user %> -
 				<%= link_to 'Cambiar contraseña', password_user_path(@user) %>
+				<% if can? :update_user_type, User %>
+				- <%= link_to 'Cambiar tipo de usuario', user_type_user_path(@user) %>
+				<% end %>
 			</p>
 		</div>
   </div>

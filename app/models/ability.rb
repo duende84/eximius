@@ -5,12 +5,16 @@ class Ability
     user ||= User.new # guest user (not logged in)
     if user.admin?
       can :manage, :all
-    elsif user.register?
+    elsif user.team?
       can :read, :all
       can [:destroy, :update, :password, :update_password], User, :id => user.id
       can :create, User
       can [:update, :destroy], Post, :author_id => user.id
       can :create, Post
+    elsif user.register?
+      can :read, :all
+      can [:destroy, :update, :password, :update_password], User, :id => user.id
+      can :create, User
     else
       can :read, [Post, User]
       can :create, User

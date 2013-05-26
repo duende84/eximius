@@ -67,6 +67,14 @@ class User < ActiveRecord::Base
     end
   end
 
+  def team?
+    if (self.user_type == UserType.find_by_name('Team')) && (self.user_type!= nil)
+      return true
+    else
+      return false
+    end
+  end
+
   private
 
   def create_remember_token
