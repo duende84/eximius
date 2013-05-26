@@ -19,6 +19,7 @@ def make_user_types
   puts "----------------"
 
 	UserType.create!(name: "Admin")
+  UserType.create!(name: "Team")
 	UserType.create!(name: "Registrado")
 end
 

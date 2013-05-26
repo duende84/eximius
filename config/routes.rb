@@ -4,6 +4,8 @@ Eximius::Application.routes.draw do
     member do
       get 'password'
       put 'update_password'
+      get 'user_type'
+      put 'update_user_type'
     end
   end
 
