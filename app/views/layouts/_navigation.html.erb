@@ -1,7 +1,7 @@
 <%= link_to image_tag("logo_eximius.png", :alt => "Eximius" ),
 root_path, :class => 'brand img_brand' %>
 
-<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+<a class="btn btn-navbar margin_collapse" data-toggle="collapse" data-target=".nav-collapse">
   <span class="icon-bar"></span>
   <span class="icon-bar"></span>
   <span class="icon-bar"></span>
@@ -11,7 +11,7 @@ root_path, :class => 'brand img_brand' %>
   <ul class="nav pull-right">
     <li><%= link_to "Inicio", root_path, :class => 'home_link' %></li>
     <li><%= link_to "Servicios", root_path, :class => 'home_link' %></li>
-    <li><%= link_to "Conocenos", users_path, :class => 'home_link' %></li>
+    <li><%= link_to "Conócenos", users_path, :class => 'home_link' %></li>
     <li><%= link_to "Contacto", contact_path, :class => 'home_link' %></li>
     <li><%= link_to "Blog", posts_path, :class => 'home_link' %></li>
     <li class="dropdown" id="accountmenu">
@@ -28,12 +28,16 @@ root_path, :class => 'brand img_brand' %>
       <% end %>
       <ul class="dropdown-menu">
         <% if signed_in? %>
-            <li><%= link_to "Mi perfil: "+current_user.name, current_user %></li>
+            <li>
+              <%= link_to "Mi perfil: "+current_user.name, current_user, :class => 'home_link' %>
+            </li>
             <li class="divider"></li>
-            <li><%= link_to "Salir", signout_path, method: "delete" %></li>
+            <li>
+              <%= link_to "Salir", signout_path, method: "delete", :class => 'home_link' %>
+            </li>
           <% else %>
-            <li><%= link_to "Iniciar sesion", signin_path %></li>
-            <li><%= link_to "Registrate", signup_path %></li>
+            <li><%= link_to "Iniciar sesion", signin_path, :class => 'home_link' %></li>
+            <li><%= link_to "Registrate", signup_path, :class => 'home_link play_font' %></li>
           <% end %>
       </ul>
     </li>

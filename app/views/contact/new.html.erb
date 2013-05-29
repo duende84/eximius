@@ -1,30 +1,31 @@
-<% provide(:title, 'Contacto') %>
-<div id="reg_form" class="bg_form">
-	<h1>Contacto</h1>
-	<%= form_for @contact, :url => contact_path do |form| %>
-	  <fieldset class="fields">
-	    <div class="field">
-	      <%= form.label :name, "Nombre", :class => "label_form" %>
-	      <%= form.text_field :name, :class => "text_field_form" %>
-	    </div>
+<div>
+	<h1 class="home_header">Contacto</h1>
+	<div id="reg_form" style="margin-top: 3%">
+		<%= form_for Contact.new, :url => contact_path do |form| %>
+		  <fieldset class="fields">
+		    <div class="field">
+		      <%= form.label :name, "Nombre", :class => "label_form" %>
+		      <%= form.text_field :name, :class => "text_field_form" %>
+		    </div>
 
-	    <div class="field">
-	      <%= form.label :email, :class => "label_form" %>
-	      <%= form.text_field :email, :class => "text_field_form" %>
-	    </div>
-	    <div class="field">
-	      <%= form.label :subject, "Asunto", :class => "label_form" %>
-	      <%= form.text_field :subject, :class => "text_field_form" %>
-	    </div>
+		    <div class="field">
+		      <%= form.label :email, :class => "label_form" %>
+		      <%= form.text_field :email, :class => "text_field_form" %>
+		    </div>
+		    <div class="field">
+		      <%= form.label :subject, "Asunto", :class => "label_form" %>
+		      <%= form.text_field :subject, :class => "text_field_form" %>
+		    </div>
 
-	    <div class="field">
-	      <%= form.label :body, "Mensaje", :class => "label_form" %>
-	      <%= form.text_area :body, :class => "text_field_form", :size => "50x5"  %>
-	    </div>
-	  </fieldset>
+		    <div class="field">
+		      <%= form.label :body, "Mensaje", :class => "label_form" %>
+		      <%= form.text_area :body, :class => "text_field_form", :size => "50x5"  %>
+		    </div>
+		  </fieldset>
 
-	  <fieldset class="actions">
-	    <%= form.submit "Enviar", class: "btn btn-primary btn_form" %>
-	  </fieldset>
-	<% end %>
+		  <fieldset class="actions">
+		    <%= form.submit "Enviar", class: "btn btn-primary btn_form" %>
+		  </fieldset>
+		<% end %>
+	</div>
 </div>

@@ -1,5 +1,8 @@
 body {
   background-color: white;
+  background-image:url('pagina_eximius.jpg');
+  background-repeat: no-repeat;
+  font-family: 'Play', serif;
 }
 
 @mixin box_sizing {
@@ -21,7 +24,7 @@ body {
 
 .img_brand{
   margin-top: 10px;
-  padding: 5px 60px !important;
+  padding-left: 200px !important;
 }
 
 .justify_text{
@@ -29,6 +32,7 @@ body {
 }
 
 /* user image in nav bar */
+
 .img_container{
   padding: 0 !important;
 }
@@ -39,6 +43,11 @@ body {
 
 .img_caret{
   margin-top: 20% !important;
+}
+
+.caret{
+  border-bottom-color: #395157 !important;
+  border-top-color: #395157 !important;
 }
 
 .img_profile{

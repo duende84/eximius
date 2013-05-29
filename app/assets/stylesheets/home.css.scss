@@ -2,6 +2,36 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.home_content{
-  margin: 15% 20%;
+#home{
+	height: 500px;
+}
+
+.home_section{
+  margin-top: 20%;
+  margin-bottom: 10%;
+  margin-left: 10%;
+}
+
+.home_section>div{
+	margin: 10% 0;
+}
+
+.home_section>div>div>img{
+	margin: 2% !important;
+	width: auto;
+	height: auto;
+}
+
+.home_link{
+	color: #395157 !important;
+}
+
+.home_social{
+	margin-top: 0%;
+	margin-left: 25%;
+}
+
+.home_header{
+	position: relative;
+	left: -40%;
 }

@@ -2,7 +2,7 @@
 <div id="reg_form" class="bg_form">
   <h1>Listado de usuarios</h1>
 
-  <% @users.each do |user| %>
+  <% User.all.each do |user| %>
     <hr>
     <% if !user.image_url(:thumb).to_s.blank? %>
       <p><%= image_tag user.image_url(:thumb).to_s %></p>

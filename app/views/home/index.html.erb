@@ -1,24 +1,16 @@
-<div class="home_content">
-	<h1>Eximius Studio</h1>
-
-	<% post = Post.find(1) %>
-  <div class="justify_text">
-    <h3><%= post.title %></h3>
-    <p><%= post.date %></p>
-    <% if !post.image_url(:show).to_s.blank? %>
-      <p><%= image_tag post.image_url(:show).to_s %></p>
-    <% end %>
-    <p><%= post.content.html_safe %></p>
+<div>
+  <div id="home">
   </div>
-  <div style="padding:0 15%">
-    <span style="margin-right:50px">
-    <%= like_button(589164481117198, width: '450', 'show-faces' => 'true', href: 'https://www.facebook.com/EximiusStudio', :layout => 'button_count') %>
-    </span>
-    <span>
-    <%= google_plus_button(annotation: 'bubble', href: 'http://www.extudio.co') %>
-    </span>
-    <span>
-    <%= tweet_button(via: 'EximiusStudio', url: 'http://www.extudio.co', text: '#EximiusStudio', count: 'horizontal') %>
-    </span>
+  <div id="services" class="home_section">
+    <%= render 'services' %>
+  </div>
+  <div id="about" class="home_section">
+    <%= render 'about' %>
+  </div>
+  <div id="contact" class="home_section">
+    <%= render :template => 'contact/new' %>
+  </div>
+  <div class="home_social">
+    <%= render 'layouts/social' %>
   </div>
 </div>
