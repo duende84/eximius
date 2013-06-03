@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= full_title(yield(:title)) %></title>
     <meta name="description" content="">
-    <meta name="author" content="MovilBrains">
+    <meta name="author" content="Eximius Studio">
+    <%= csrf_meta_tags %>
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= stylesheet_link_tag "//fonts.googleapis.com/css?family=Play" %>
     <%= stylesheet_link_tag "//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/themes/smoothness/jquery-ui.css" %>
@@ -14,11 +15,10 @@
     <!--[if IE 9 ]>
     <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <%= csrf_meta_tags %>
     <%= yield(:head) %>
   </head>
   <body>
-    <header class="navbar navbar-fixed-top navbar-inverse"> <!-- navbar-inverse -->
+    <header class="navbar navbar-fixed-top navbar-inverse">
       <nav class="navbar-inner">
         <div class="container">
           <%= render 'layouts/navigation' %>

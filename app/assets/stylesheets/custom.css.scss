@@ -2,6 +2,9 @@ body {
   background-color: white;
   background-image:url('pagina_eximius.jpg');
   background-repeat: no-repeat;
+  -moz-background-size:contain;
+  -webkit-background-size:contain;
+  background-size:contain;
   font-family: 'Play', serif;
 }
 
@@ -22,11 +25,6 @@ body {
   @include box_sizing;
 }
 
-.img_brand{
-  margin-top: 10px;
-  padding-left: 200px !important;
-}
-
 .justify_text{
   text-align : justify;
 }
@@ -42,7 +40,7 @@ body {
 }
 
 .img_caret{
-  margin-top: 20% !important;
+  margin-top: 10px !important;
 }
 
 .caret{
