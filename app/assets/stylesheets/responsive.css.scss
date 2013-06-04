@@ -1,4 +1,8 @@
 @media screen {
+  #home{
+    height: 500px;
+  }
+
   h1{
   	font-size: 40px;
   	text-align:center;
@@ -21,6 +25,10 @@
 }
 
 @media screen and (max-width: 800px){
+ #home{
+  height: 150px;
+ }
+
  h1{
   	font-size: 32px;
   }

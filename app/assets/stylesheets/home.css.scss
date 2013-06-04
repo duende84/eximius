@@ -2,10 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#home{
-	height: 500px;
-}
-
 .home_section{
   margin-top: 20%;
   margin-bottom: 10%;
@@ -14,12 +10,6 @@
 
 .home_section>div{
 	margin: 10% 0;
-}
-
-.home_section>div>div>img{
-	margin: 2% !important;
-	width: 20%;
-	height: 20%;
 }
 
 .home_link{
